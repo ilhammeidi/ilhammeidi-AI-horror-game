@@ -22,15 +22,18 @@ public class PlayerStamina : MonoBehaviour
         { 
             if (_currentStamina > 0) 
             { 
-             _currentStamina = _currentStamina - _sprintStaminaCost * Time.deltaTime; 
+                // Reduce Stamina
+                _currentStamina = _currentStamina - _sprintStaminaCost * Time.deltaTime; 
             } 
             else 
             { 
+                // Stamina Runnng Out and Stop Sprint
                 _characterMovement.SetSprint(false); 
             } 
         } 
         else 
         { 
+            // Gained Stamina
             _currentStamina = _currentStamina + _staminaRegenValue * Time.deltaTime; 
         } 
         _currentStamina = Mathf.Clamp(_currentStamina, 0, _maxStamina); 

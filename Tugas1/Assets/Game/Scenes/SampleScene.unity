@@ -221,7 +221,7 @@ Transform:
   m_GameObject: {fileID: 224009045}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -21.1, y: 3.7, z: 0}
+  m_LocalPosition: {x: -42.4, y: 3.7, z: 0}
   m_LocalScale: {x: 6.9720817, y: 6.9720817, z: 6.9720817}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -315,7 +315,7 @@ Transform:
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.8, z: 0.4}
+  m_LocalPosition: {x: 0, y: 12.38, z: 0.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -499,7 +499,7 @@ Transform:
   m_GameObject: {fileID: 363883205}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.3, y: 3.7, z: -21.3}
+  m_LocalPosition: {x: -1.3, y: 3.7, z: -40.7}
   m_LocalScale: {x: 6.9720817, y: 6.9720817, z: 6.9720817}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -638,7 +638,7 @@ GameObject:
   - component: {fileID: 464170620}
   - component: {fileID: 464170619}
   - component: {fileID: 464170618}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -730,7 +730,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5.3188295, y: 1, z: 5.8343434}
+  m_LocalScale: {x: 10.493519, y: 1, z: 9.842538}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -745,6 +745,8 @@ GameObject:
   m_Component:
   - component: {fileID: 665634302}
   - component: {fileID: 665634301}
+  - component: {fileID: 665634304}
+  - component: {fileID: 665634303}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -771,12 +773,12 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 3
   m_Height: 2
-  m_Radius: 0.5
+  m_Radius: 0.4
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!4 &665634302
 Transform:
   m_ObjectHideFlags: 0
@@ -786,13 +788,46 @@ Transform:
   m_GameObject: {fileID: 665634300}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 10.58, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2023667239}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &665634303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 665634300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9182bbe4fa5b2b47999e9e889fc9206, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxStamina: 100
+  _sprintStaminaCost: 20
+  _staminaRegenValue: 20
+  _characterMovement: {fileID: 665634304}
+--- !u!114 &665634304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 665634300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65c87b76b71f463478c4ec2228522435, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _characterController: {fileID: 665634301}
+  _gravityScale: 1
+  _walkSpeed: 1
+  _sprintSpeed: 50
+  _acceleration: 2.5
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -944,7 +979,7 @@ Transform:
   m_GameObject: {fileID: 1261205026}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.8, y: 3.7, z: 0}
+  m_LocalPosition: {x: 40.5, y: 3.7, z: 0}
   m_LocalScale: {x: 6.9720817, y: 6.9720817, z: 6.9720817}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1052,7 +1087,7 @@ Transform:
   m_GameObject: {fileID: 1278019241}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.3, y: 3.7, z: 23.5}
+  m_LocalPosition: {x: -1.3, y: 3.7, z: 40.4}
   m_LocalScale: {x: 6.9720817, y: 6.9720817, z: 6.9720817}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1130,7 +1165,7 @@ Transform:
   m_GameObject: {fileID: 1886349478}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.8, z: 0.4}
+  m_LocalPosition: {x: 0, y: 12.38, z: 0.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1255,6 +1290,80 @@ Transform:
   m_Children: []
   m_Father: {fileID: 665634302}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2065247712
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2065247714}
+  - component: {fileID: 2065247713}
+  m_Layer: 0
+  m_Name: InputManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2065247713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2065247712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce121bb75a39e0b4488856e24f44892b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnMoveInput:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 665634304}
+        m_TargetAssemblyTypeName: PlayerCharacterMovement, Assembly-CSharp
+        m_MethodName: SetMoveDirection
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnSprintInput:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 665634304}
+        m_TargetAssemblyTypeName: PlayerCharacterMovement, Assembly-CSharp
+        m_MethodName: SetSprint
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!4 &2065247714
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2065247712}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.779849, y: -8.38822, z: -13.719463}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1263,6 +1372,7 @@ SceneRoots:
   - {fileID: 410087041}
   - {fileID: 832575519}
   - {fileID: 1886349480}
+  - {fileID: 2065247714}
   - {fileID: 464170621}
   - {fileID: 665634302}
   - {fileID: 224009049}
