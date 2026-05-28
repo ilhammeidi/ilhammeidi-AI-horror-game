@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerCharacterMovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     private float _currentSpeed = 5f; 
 
