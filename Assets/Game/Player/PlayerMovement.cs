@@ -20,7 +20,7 @@ public class PlayerMovement : MonoBehaviour
     private float _gravityScale = 1; 
 
     [SerializeField] 
-    private float _walkSpeed = 1; 
+    private float _walkSpeed = 3; 
 
     [SerializeField] 
     private float _sprintSpeed = 50; 

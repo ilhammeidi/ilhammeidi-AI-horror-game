@@ -54,7 +54,7 @@ public class InteractDetector : MonoBehaviour
     {
         if (_detectedInteractable != null)
         {
-            // _detectedInteractable.Interact(_owner);
+            _detectedInteractable.Interact(_owner);
             _detectedInteractable = null;
             
             _isInteracting = true;

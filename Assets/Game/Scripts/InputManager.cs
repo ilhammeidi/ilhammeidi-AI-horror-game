@@ -21,6 +21,7 @@ public class InputManager : MonoBehaviour, IPlayerActions
         Debug.Log("Interaksi"); 
         if (context.performed)
         {
+            // Jika input ditekan maka trigger event OnInteractInput
             OnInteractInput?.Invoke();
         }
     }
