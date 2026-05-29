@@ -10,6 +10,7 @@ public class Item : MonoBehaviour, IInteractable, IPickable
 
     public UnityEvent OnItemPicked;
 
+    [ContextMenu("Interact Item")]
     public void Interact(PlayerCharacter character)
     {
         Pickup(character);

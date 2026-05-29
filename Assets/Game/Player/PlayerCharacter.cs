@@ -11,8 +11,17 @@ public class PlayerCharacter : MonoBehaviour
     [SerializeField]
     private InventoryManager _inventory;
 
+    [SerializeField]
+    private InteractDetector _interactDetector;
+    public InteractDetector InteractDetector => _interactDetector;
+
     public PlayerMovement Movement => _movement;
     public PlayerStamina Stamina => _stamina;
     public InventoryManager Inventory => _inventory;
 
+    private void Awake()
+    {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+    }
 }

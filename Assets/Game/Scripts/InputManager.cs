@@ -9,6 +9,7 @@ public class InputManager : MonoBehaviour, IPlayerActions
     private GameInputAction _inputAction;
     public UnityEvent<Vector2> OnMoveInput; 
     public UnityEvent<bool> OnSprintInput; 
+    public UnityEvent OnInteractInput;
 
     public void OnMove(InputAction.CallbackContext context)
     {
@@ -18,6 +19,10 @@ public class InputManager : MonoBehaviour, IPlayerActions
     public void OnInteract(InputAction.CallbackContext context)
     {
         Debug.Log("Interaksi"); 
+        if (context.performed)
+        {
+            OnInteractInput?.Invoke();
+        }
     }
     
     public void OnSprint(InputAction.CallbackContext context)
@@ -32,6 +37,7 @@ public class InputManager : MonoBehaviour, IPlayerActions
             OnSprintInput?.Invoke(false); 
         } 
     }
+    
 
     private void Awake()
     {
