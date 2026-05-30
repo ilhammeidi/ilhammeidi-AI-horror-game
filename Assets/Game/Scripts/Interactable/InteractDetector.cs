@@ -9,12 +9,13 @@ public class InteractDetector : MonoBehaviour
     private float _detectorDistance;
 
     [SerializeField]
-    private Vector3 _detectorBoxSize = Vector3.one;
+    private Vector3 _detectorBoxSize = new Vector3(1.0f, 1.0f, 1.0f);
 
     [SerializeField]
     private LayerMask _interactableLayer;
 
     private IInteractable _detectedInteractable;
+    
     private bool _isInteracting;
 
     /// <summary>
@@ -74,7 +75,8 @@ public class InteractDetector : MonoBehaviour
 
         Transform cameraTransform = Camera.main.transform;
 
-        bool isDetectingInteractable = Physics.BoxCast(cameraTransform.position,
+        bool isDetectingInteractable = Physics.BoxCast(
+            cameraTransform.position,
             _detectorBoxSize * 0.5f,
             cameraTransform.forward,
             out RaycastHit hit,

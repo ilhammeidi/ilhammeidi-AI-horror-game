@@ -13,6 +13,10 @@ public class Door : MonoBehaviour, IInteractable
     public string Name => _name;
 
     [SerializeField]
+    private string _keyID;
+    public string Id => _keyID;
+
+    [SerializeField]
     protected Transform _doorTransform;
 
     [SerializeField]
@@ -29,15 +33,27 @@ public class Door : MonoBehaviour, IInteractable
     [ContextMenu("Interact Door")]
     public void Interact(PlayerCharacter character)
     {
-        if (_isOpen == true)
+        if (_isLocked == true)
         {
-            // Jika pintu terbuka maka tutup pintu
-            Close();
+            bool hasKey = character.Inventory.CheckItem(_keyID);
+            if (hasKey == true)
+            {
+                _isLocked = false;
+                Open();
+            }
         }
         else
         {
-            // Jika pintu tertutup maka buka pintu
-            Open();
+            if (_isOpen == true)
+            {
+                // Jika pintu terbuka maka tutup pintu
+                Close();
+            }
+            else
+            {
+                // Jika pintu tertutup maka buka pintu
+                Open();
+            }
         }
     }
 

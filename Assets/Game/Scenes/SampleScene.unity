@@ -1835,7 +1835,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1578619321}
   m_Layer: 0
-  m_Name: View Helper
+  m_Name: Object Helper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

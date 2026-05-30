@@ -29,6 +29,10 @@ public class PlayerMovement : MonoBehaviour
     private float _acceleration = 2.5f; 
 
 
+    /// <summary>
+    /// FOR INPUT MANAGER
+    /// </summary>
+
     public void SetSprint(bool isSprint) 
     { 
         _isSprint = isSprint; 
@@ -115,12 +119,6 @@ public class PlayerMovement : MonoBehaviour
             _currentSpeed = 0; 
         } 
     } 
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
