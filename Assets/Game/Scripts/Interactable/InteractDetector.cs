@@ -111,8 +111,6 @@ public class InteractDetector : MonoBehaviour
                 }
             }
         }
-
-
     }
 
     private void Update()

@@ -31,7 +31,6 @@ public class HidingCloset : MonoBehaviour, IInteractable
         _hidingPlayer.Movement.SetEnabled(false);
         _hidingPlayer.InteractDetector.SetEnabled(false);
         _hidingPlayer.Camera.ResetCameraRotation();
-        _hidingPlayer.Input.OnInteractInput.AddListener(StopHiding);
  
         _door.Open();
         yield return new WaitWhile(() => _door.IsAnimating);
@@ -52,8 +51,9 @@ public class HidingCloset : MonoBehaviour, IInteractable
 
         _hidingPlayer.transform.position = _hidePosition.position;
         _hidingPlayer.transform.rotation = _hidePosition.rotation;
- 
         _door.Close();
+ 
+        _hidingPlayer.Input.OnInteractInput.AddListener(StopHiding);
  
         yield return new WaitWhile(() => _door.IsAnimating);
     }
@@ -61,6 +61,8 @@ public class HidingCloset : MonoBehaviour, IInteractable
     /// GET OUT FROM WARDROBE
     public IEnumerator Unhide()
     {
+        _hidingPlayer.Input.OnInteractInput.RemoveListener(StopHiding);
+
         _door.Open();
         yield return new WaitWhile(() => _door.IsAnimating);
  
@@ -82,7 +84,6 @@ public class HidingCloset : MonoBehaviour, IInteractable
 
         _hidingPlayer.transform.position = _unhidePosition.position;
         _hidingPlayer.transform.rotation = _unhidePosition.rotation;
-        _hidingPlayer.Input.OnInteractInput.RemoveListener(StopHiding);
  
         _door.Close();
  
@@ -91,6 +92,7 @@ public class HidingCloset : MonoBehaviour, IInteractable
         _hidingPlayer.InteractDetector.SetEnabled(true);
         _hidingPlayer.SetIsHiding(false);
         _hidingPlayer = null;
+        
  
         yield return new WaitWhile(() => _door.IsAnimating);
     }
