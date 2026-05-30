@@ -13,6 +13,8 @@ public class PlayerMovement : MonoBehaviour
     private bool _isSprint; 
     public bool IsSprint => _isSprint;
 
+    public bool Enabled { get; private set; } = true;
+
     [SerializeField] 
     private CharacterController _characterController; 
 
@@ -28,6 +30,13 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] 
     private float _acceleration = 2.5f; 
 
+    /// <summary>
+    /// HIDDING MOVEMENT
+    /// </summary>
+    public void SetEnabled(bool isEnabled)
+    {
+        Enabled = isEnabled;
+    }
 
     /// <summary>
     /// FOR INPUT MANAGER
@@ -70,7 +79,6 @@ public class PlayerMovement : MonoBehaviour
        _velocityY = _velocityY + Physics.gravity.y * _gravityScale * Time.deltaTime; 
     } 
     
-
     private void CalculateVelocityXZ()
     {
         Transform cameraTransform = Camera.main.transform; 
@@ -90,10 +98,13 @@ public class PlayerMovement : MonoBehaviour
 
     public void Move()
     {
-        CalculateVelocityXZ();
-        CalculateVelocityY();
-        Vector3 velocity = new Vector3(_velocityXZ.x, _velocityY, _velocityXZ.z); 
-        _characterController.Move(velocity); 
+        if (Enabled == true)
+        {
+            CalculateVelocityXZ();
+            CalculateVelocityY();
+            Vector3 velocity = new Vector3(_velocityXZ.x, _velocityY, _velocityXZ.z); 
+            _characterController.Move(velocity); 
+        }
     }
 
     /// <summary>

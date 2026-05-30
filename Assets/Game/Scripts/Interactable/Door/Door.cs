@@ -10,7 +10,6 @@ public class Door : MonoBehaviour, IInteractable
 
     [SerializeField]
     private string _name;
-    public string Name => _name;
 
     [SerializeField]
     private string _keyID;
@@ -29,6 +28,11 @@ public class Door : MonoBehaviour, IInteractable
     public bool IsAnimating => _isAnimating;
 
     protected bool _isOpen;
+
+    /// <summary>
+    /// ACCESS INTERFACE
+    /// </summary>
+    public string Name => _name;
 
     [ContextMenu("Interact Door")]
     public void Interact(PlayerCharacter character)

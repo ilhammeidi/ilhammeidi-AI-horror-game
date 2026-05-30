@@ -6,9 +6,12 @@ public class Item : MonoBehaviour, IInteractable, IPickable
     [SerializeField]
     private ItemData _itemData;
 
-    public string Name => _itemData.Name;
-
     public UnityEvent OnItemPicked;
+
+    /// <summary>
+    /// ACCESS INTERFACE
+    /// </summary>
+    public string Name => _itemData.Name;
 
     [ContextMenu("Interact Item")]
     public void Interact(PlayerCharacter character)
