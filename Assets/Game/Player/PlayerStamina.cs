@@ -12,7 +12,7 @@ public class PlayerStamina : MonoBehaviour
     private float _staminaRegenValue = 20;
 
     [SerializeField] 
-    private PlayerCharacterMovement _characterMovement; 
+    private PlayerMovement _characterMovement; 
 
     private float _currentStamina; 
 
