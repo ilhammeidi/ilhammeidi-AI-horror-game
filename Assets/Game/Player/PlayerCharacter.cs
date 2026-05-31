@@ -26,6 +26,10 @@ public class PlayerCharacter : MonoBehaviour
     private InputManager _input;
     public InputManager Input => _input;
 
+    [SerializeField]
+    private Flashlight _flashlight;
+    public Flashlight Flashlight => _flashlight;
+
     public bool IsHiding { get; private set; }
     public void SetIsHiding(bool isHiding)
     {
